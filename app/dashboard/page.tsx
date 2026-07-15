@@ -85,25 +85,27 @@ export default function DashboardPage() {
             icon={<ScanLine className="h-5 w-5" />}
             label="Total Detections"
             value={stats.totalDetections.toString()}
-            trend={stats.totalDetections > 0 ? "+" : ""}
+            delta={stats.totalDetections > 0 ? "+" : ""}
+            up={true}
           />
           <StatCard
             icon={<Users className="h-5 w-5" />}
             label="Total Faces Found"
             value={stats.totalFaces.toString()}
-            trend={stats.totalFaces > 0 ? "+" : ""}
+            delta={stats.totalFaces > 0 ? "+" : ""}
+            up={true}
           />
           <StatCard
             icon={<Camera className="h-5 w-5" />}
             label="Today"
             value={stats.todayDetections.toString()}
-            trend={stats.todayDetections > 0 ? "new" : ""}
+            delta={stats.todayDetections > 0 ? "new" : ""}
+            up={true}
           />
           <StatCard
             icon={<Activity className="h-5 w-5" />}
             label="Avg Faces / Detection"
             value={stats.avgFacesPerDetection.toString()}
-            trend={stats.avgFacesPerDetection > 0 ? "" : ""}
           />
         </div>
 

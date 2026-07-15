@@ -24,8 +24,8 @@ export function TabsTrigger({ value, children }: { value: string; children: Reac
     </button>
   );
 }
-export function TabsContent({ value, children }: { value: string; children: React.ReactNode }) {
+export function TabsContent({ value, children, className }: { value: string; children: React.ReactNode; className?: string }) {
   const ctx = React.useContext(TabsCtx)!;
   if (ctx.value !== value) return null;
-  return <div className="mt-4 animate-fade-in">{children}</div>;
+  return <div className={cn("mt-4 animate-fade-in", className)}>{children}</div>;
 }
