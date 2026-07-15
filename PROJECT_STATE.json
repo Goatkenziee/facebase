@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-15T05:15:34.695Z",
+  "updatedAt": "2026-07-15T05:37:10.734Z",
   "framework": "Next.js",
   "dbModels": [
     "User",
@@ -7,7 +7,8 @@
   ],
   "apiRoutes": [],
   "pages": [
-    "app/page.tsx"
+    "app/page.tsx",
+    "pages/_document.tsx"
   ],
   "components": [
     "app/layout.tsx",
@@ -33,7 +34,6 @@
     "features/auth/auth-form.tsx"
   ],
   "dependencies": [
-    "@clerk/nextjs",
     "@prisma/client",
     "@tensorflow/tfjs-backend-webgl",
     "@tensorflow/tfjs-core",
@@ -61,11 +61,11 @@
     "typescript",
     "zod"
   ],
-  "fileCount": 40,
+  "fileCount": 41,
   "runtime": {
     "status": "ONLINE",
     "previewUrl": "https://3000-ism8wzx18fj9jg5sogy29.e2b.app",
     "sandboxId": "ism8wzx18fj9jg5sogy29",
-    "lastUsedAt": "2026-07-15T05:15:05.953Z"
+    "lastUsedAt": "2026-07-15T05:36:45.642Z"
   }
 }

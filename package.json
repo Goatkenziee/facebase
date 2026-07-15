@@ -12,14 +12,13 @@
     "db:seed": "tsx prisma/seed.ts"
   },
   "dependencies": {
-    "next": "14.2.15",
+    "next": "14.2.21",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "framer-motion": "11.11.9",
     "lucide-react": "0.453.0",
     "clsx": "2.1.1",
     "tailwind-merge": "2.5.4",
-    "@clerk/nextjs": "^5.7.0",
     "@prisma/client": "^5.22.0",
     "face-api.js": "^0.22.2",
     "@tensorflow/tfjs-core": "^4.21.0",

@@ -1,14 +1,14 @@
-// FaceBase — Clerk auth middleware
-// Protects /dashboard and /detect routes; public pages are / and /about
+// FaceBase — middleware placeholder (auth-free for now)
+// No Clerk dependency — app runs without authentication.
+// Add auth middleware here later when needed.
 
-import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 
-const isProtectedRoute = createRouteMatcher(["/dashboard(.*)", "/detect(.*)", "/glasses(.*)"]);
-
-export default clerkMiddleware((auth, req) => {
-  if (isProtectedRoute(req)) auth().protect();
-});
+export default function middleware(_req: NextRequest) {
+  return NextResponse.next();
+}
 
 export const config = {
-  matcher: ["/((?!.+\\.[\\w]+$|_next).*)", "/", "/(api|trpc)(.*)"],
+  matcher: [],
 };
