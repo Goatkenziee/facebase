@@ -1,0 +1,37 @@
+// FaceBase — data model for face detection persistence
+// User records are synced from Clerk on first detection save
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String      @id @default(cuid())
+  clerkId   String      @unique
+  email     String?
+  name      String?
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+
+  detections Detection[]
+}
+
+model Detection {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  imageUrl  String?
+  faceCount Int      @default(0)
+  faces     Json?    // Array of { top, left, width, height, confidence, age?, gender?, expression? }
+  source    String   @default("upload") // "upload" | "camera" | "smartglasses"
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([createdAt])
+}
